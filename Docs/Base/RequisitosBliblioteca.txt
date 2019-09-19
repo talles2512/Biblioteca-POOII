@@ -1,0 +1,21 @@
+
+Biblioteca POOII
+Regras para o empréstimo livros
+• No máximo por usuário podem ser emprestados até 3 livros podendo ser alterado pelo bibliotecário.
+• Padrão: 10 Dias mas pode ser alterado pelo bibliotecário
+• Multa por atraso:
+• 0,50 centavos por dia de atraso por obra.
+• A não devolução do material gera um bloqueio no sistema a futuros empréstimos
+• A perda ou dano de qualquer documento implicará na reposição de outro exemplar pelo usuário.
+
+Versão 1.0 BibliotecaPOOII
+• Deverá ser criada uma dll para as operações de banco.
+• Deverá ser criada uma dll com as operações de logica de
+negócio.
+• Deverá ser criada uma dll com as funcionalidades auxiliares que
+possam ser utilizadas em aplicações futuras.
+• Na base deverá ser cadastrado os administradores da aplicação,
+que deverão fazer login na aplicação para poder realizar as
+operações de empréstimo de devolução;
+• Deverão ser criadas telas de relatório/Consulta/Cadastro/
+Atualização que atendam a regra de negócio.

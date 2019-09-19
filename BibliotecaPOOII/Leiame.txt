@@ -1,0 +1,24 @@
+﻿
+
+1) Controle Ribbon
+
+Baixe o projeto do site
+
+https://ribbon.codeplex.com/
+
+
+
+
+
+
+2) Site que mostra um passo a passo
+
+
+http://www.codeproject.com/Articles/364272/Easily-Add-a-Ribbon-into-a-WinForms-Application-Cs
+
+
+
+
+
+
+
