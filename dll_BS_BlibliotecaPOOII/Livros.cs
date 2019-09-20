@@ -7,17 +7,17 @@ using UNIP.POOII.DB_BlibliotecaPOOII;
 
 namespace UNIP.POOII.BS_BlibliotecaPOOII
 {
-    public class Livros:bsNegocio, IBSBanco
+    public class Livros : bsNegocio, IBSBanco
     {
-       public int CodLivro{get;set;}
-       public string Titulo {get;set;}
-       public string ISBN { get; set; }
-       public DateTime DataEntrada { get; set; }
-       public string Status { get; set; }
-       public int Quantidade { get; set; }
-       public double Valor { get; set; }
+        public int CodLivro { get; set; }
+        public string Titulo { get; set; }
+        public string ISBN { get; set; }
+        public DateTime DataEntrada { get; set; }
+        public string Status { get; set; }
+        public int Quantidade { get; set; }
+        public double Valor { get; set; }
 
-       tbLivros tb = new tbLivros();
+        tbLivros tb = new tbLivros();
 
         public void SetDados()
         {
@@ -59,6 +59,7 @@ namespace UNIP.POOII.BS_BlibliotecaPOOII
         public DataSet Consultar()
         {
             DataSet ds = new DataSet();
+            SetDados();
             ds = tb.Consultar();
 
             return ds;

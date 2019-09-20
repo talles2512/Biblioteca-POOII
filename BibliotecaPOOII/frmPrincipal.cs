@@ -69,5 +69,10 @@ namespace UNIP.POOII.BibliotecaPOOII
         {
             AbrirNovoForm<frmConsultarLivros>("LIVROS");
         }
+
+        private void BtnADAutores_Click(object sender, EventArgs e)
+        {
+            AbrirNovoForm<frmAlterarDeletarAutores>("AUTORES");
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using UNIP.POOII.DB_Kernel;
 using UNIP.POOII.Util;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace UNIP.POOII.DB_BlibliotecaPOOII
 {
@@ -12,7 +13,9 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
     {
         private string stringConexao { get; set; }
 
-        public  dbTabelas()
+        dbKernel db = new dbKernel();
+
+        public dbTabelas()
         {
             LerStringConexao();
         }
@@ -25,8 +28,6 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         protected bool Salvar(string str)
         {
             bool ret = false;
-            dbKernel db = new dbKernel();
-
             ret = db.Salvar(str, stringConexao);
 
             return ret;
@@ -35,8 +36,6 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         protected bool Atualizar(string str) //Igual SALVAR, Melhor criar apenas um "ExecutaIntrucoes" ?
         {
             bool ret = false;
-            dbKernel db = new dbKernel();
-
             ret = db.Atualizar(str, stringConexao);
 
             return ret;
@@ -45,8 +44,6 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         protected bool Apagar(string str) //Igual SALVAR, Melhor criar apenas um "ExecutaIntrucoes" ?
         {
             bool ret = false;
-            dbKernel db = new dbKernel();
-
             ret = db.Apagar(str, stringConexao);
 
             return ret;
@@ -56,8 +53,6 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         protected int ProximoCodigo(string str)
         {
             int ret = int.MinValue;
-            dbKernel db = new dbKernel();
-
             ret = db.ConsultarMaximo(str, stringConexao);
 
             return ret;
@@ -66,8 +61,6 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         protected int ConsultarNumeroInteiro(string str)
         {
             int ret = int.MinValue;
-            dbKernel db = new dbKernel();
-
             ret = db.ConsultarNumeroInteiro(str, stringConexao);
 
             return ret;
@@ -76,12 +69,17 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         public DataSet LerTodosDados(string str)
         {
             DataSet ds = new DataSet();
-
-            dbKernel db = new dbKernel();
-
             ds = db.LerTodosDados(str, stringConexao);
 
             return ds;
+        }
+
+        public SqlDataReader ConsultarDR(string str)
+        {
+            SqlDataReader dr = null;
+            dr = db.ConsultarDR(str, stringConexao);
+
+            return dr;
         }
     }
 }

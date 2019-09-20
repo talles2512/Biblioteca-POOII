@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UNIP.POOII.DB_BlibliotecaPOOII;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace UNIP.POOII.BS_BlibliotecaPOOII
 {
@@ -29,7 +30,7 @@ namespace UNIP.POOII.BS_BlibliotecaPOOII
             SetDados();
             ret = tb.Salvar();
 
-            return ret;            
+            return ret;
         }
 
         public bool Atualizar()
@@ -52,6 +53,7 @@ namespace UNIP.POOII.BS_BlibliotecaPOOII
         public DataSet Consultar() //Troquei BOOL por DataSet para retornar dados no DataGrid
         {
             DataSet ds = new DataSet();
+            SetDados();
             ds = tb.Consultar();
 
             return ds;
@@ -73,6 +75,14 @@ namespace UNIP.POOII.BS_BlibliotecaPOOII
             ds = tb.LerTodosDados();
 
             return ds;
+        }
+
+        public SqlDataReader ConsultarDR()
+        {
+            SqlDataReader dr = null;
+            SetDados();
+            dr = tb.ConsultarDR();
+            return dr;
         }
     }
 }

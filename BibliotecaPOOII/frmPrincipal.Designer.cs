@@ -50,6 +50,9 @@ namespace UNIP.POOII.BibliotecaPOOII
             this.rbConsultarLivros = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.rbConsultarMultas = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
+            this.btnADAutores = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -74,6 +77,7 @@ namespace UNIP.POOII.BibliotecaPOOII
             this.ribbon1.TabIndex = 3;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
+            this.ribbon1.Tabs.Add(this.ribbonTab3);
             this.ribbon1.Text = "ribbon1";
             // 
             // ribbonOrbMenuItem1
@@ -218,6 +222,27 @@ namespace UNIP.POOII.BibliotecaPOOII
             this.rbConsultarMultas.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbConsultarMultas.SmallImage")));
             this.rbConsultarMultas.Text = "";
             // 
+            // ribbonTab3
+            // 
+            this.ribbonTab3.Name = "ribbonTab3";
+            this.ribbonTab3.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab3.Text = "Alterar/Deletar";
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Items.Add(this.btnADAutores);
+            this.ribbonPanel7.Name = "ribbonPanel7";
+            this.ribbonPanel7.Text = "Autores";
+            // 
+            // btnADAutores
+            // 
+            this.btnADAutores.Image = ((System.Drawing.Image)(resources.GetObject("btnADAutores.Image")));
+            this.btnADAutores.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnADAutores.LargeImage")));
+            this.btnADAutores.Name = "btnADAutores";
+            this.btnADAutores.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnADAutores.SmallImage")));
+            this.btnADAutores.Text = "";
+            this.btnADAutores.Click += new System.EventHandler(this.BtnADAutores_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,5 +287,8 @@ namespace UNIP.POOII.BibliotecaPOOII
         private RibbonOrbMenuItem ribbonOrbMenuItem1;
         private RibbonOrbMenuItem ribbonOrbMenuItem2;
         private RibbonOrbMenuItem ribbonOrbMenuItem3;
+        private RibbonTab ribbonTab3;
+        private RibbonPanel ribbonPanel7;
+        private RibbonButton btnADAutores;
     }
 }

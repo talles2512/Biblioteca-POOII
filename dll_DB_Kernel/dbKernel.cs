@@ -218,5 +218,28 @@ namespace UNIP.POOII.DB_Kernel
 
             return ds;
         }
+
+        public SqlDataReader ConsultarDR(string str, string stringConexao)
+        {
+            SqlConnection conexao = null;
+            SqlCommand comando = null;
+            string Query = "";
+            SqlDataReader dr = null;
+
+            try
+            {
+                Query = str;
+                conexao = new SqlConnection(stringConexao);
+                comando = new SqlCommand(Query, conexao);
+                conexao.Open();
+                dr = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                string err = ex.Message;
+                return dr;
+            }
+            return dr;
+        }
     }
 }

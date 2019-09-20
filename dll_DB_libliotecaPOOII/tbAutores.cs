@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace UNIP.POOII.DB_BlibliotecaPOOII
 {
@@ -11,7 +12,7 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         public int Codigo { get; set; }
         public string Nome { get; set; }
         public DateTime Data { get; set; }
-       
+
         public bool Salvar()
         {
             bool ret = false;
@@ -28,10 +29,10 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
                         Codigo.ToString() +
                         "," + "'" + Nome + "'" +
                         "," + "'" + Data.ToShortDateString() + "'" + ")";
-                        //Data.Day.ToString() + "/" +
-                        //Data.Month.ToString() + "/" +
-                        //Data.Year.ToString() +
-                        //"'" + ")";
+                //Data.Day.ToString() + "/" +
+                //Data.Month.ToString() + "/" +
+                //Data.Year.ToString() +
+                //"'" + ")";
             }
             else
             {
@@ -72,7 +73,7 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
         {
             bool ret = false;
 
-            string query = "DELETE FROM [dbo].[tbAutores]"+
+            string query = "DELETE FROM [dbo].[tbAutores]" +
                          " WHERE CodAutor=" + Codigo.ToString();
 
             ret = base.Apagar(query);
@@ -94,7 +95,7 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
             return ds;
         }
 
-        
+
         public int ProximoCodigo()
         {
             int ret = int.MinValue;
@@ -119,6 +120,20 @@ namespace UNIP.POOII.DB_BlibliotecaPOOII
             ds = base.LerTodosDados(query);
 
             return ds;
+        }
+
+        public SqlDataReader ConsultarDR()
+        {
+            SqlDataReader dr = null;
+
+            string query = "";
+
+            query = "SELECT CodAutor, NomeAutor, DataEntrada FROM tbAutores" +
+                " WHERE CodAutor=" + Codigo.ToString();
+
+            dr = base.ConsultarDR(query);
+
+            return dr;
         }
     }
 }

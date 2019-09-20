@@ -25,7 +25,7 @@ namespace UNIP.POOII.BibliotecaPOOII
         }
 
         private void frmConsultaAutores_Load(object sender, EventArgs e)
-        {  
+        {
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -41,6 +41,7 @@ namespace UNIP.POOII.BibliotecaPOOII
             }
             else
             {
+                autores.Codigo = Convert.ToInt32(txtcodautor.Text);
                 dgTodosAutores.DataSource = autores.Consultar().Tables[0];
             }
         }
